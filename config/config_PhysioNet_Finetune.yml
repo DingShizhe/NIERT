@@ -1,0 +1,44 @@
+# model_name: TransformerRecon  # choose from NIERT, TransformerRecon
+model_name: NIERT_PhysioNet  # choose from NIERT, TransformerRecon
+# model_name: ConditionalNeuralProcess  # choose from NIERT, TransformerRecon, ConditionalNeuralProcess
+# model_name: AttentiveNeuralProcess  # choose from NIERT, TransformerRecon, ConditionalNeuralProcess, AttentiveNeuralProcess
+
+dataset_type: PhysioNet_FINETUNE
+# dataset_type: NeSymReS
+
+resume_from_checkpoint: path_to_the_pretrained_model
+
+# dataset path
+data_root: dataset path of PhysioNet
+cfg_dim_input: 42
+cfg_dim_output: 41
+
+# train/val set
+train_path: train/train_val.txt
+
+# test set
+## choose the test set: test_0.txt, test_1.txt, test_2.txt, test_3.txt,test_4.txt,test_5.txt,test_6.txt
+test_path: test/test_0.txt
+
+batch_size: 32
+max_epochs: 160
+lr: 0.0005
+lr_decay: 0.97
+
+model_arch_cfg:
+  layers: 2
+  dim_hidden: 128
+  dim_inner: 512
+  num_heads: 4
+
+# which gpu to use
+gpu: 1 # 0 cpu, 1 gpu:0, 2 gpu:1
+val_check_interval: 1.0
+
+# num_workers in dataloader
+num_workers: 16
+
+# preprocessing of data
+## input & output
+mean_heat: 298
+std_heat: 1

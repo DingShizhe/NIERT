@@ -1,0 +1,91 @@
+model_name: NIERT
+# model_name: TransformerRecon
+# model_name: ConditionalNeuralProcess
+# model_name: AttentiveNeuralProcess
+
+dataset_type: NeSymReS
+cfg_dim_input: 3
+cfg_dim_output:
+
+# dataset path
+data_root: ./nesymres_data/data
+train_path: datasets/1000000
+test_path: raw_datasets/150
+
+# batch_size: 128
+batch_size: 128
+# batch_size: 256
+# max_epochs: 100
+max_epochs: 160
+lr: 0.0001
+lr_decay:
+
+# which gpu to use
+gpu: 2
+
+val_check_interval: 1.0
+
+# num_workers in dataloader
+num_workers: 16
+
+model_arch_cfg:
+  # layers: 2
+  layers: 5
+  dim_hidden: 512
+  dim_inner: 512
+  num_heads: 8
+
+nesymres_data_cfg:
+  dataset_train:
+    total_variables: #Do not fill
+    total_coefficients: #Do not fill
+    max_number_of_points: 50  # 1/10
+    type_of_sampling_points: logarithm
+    predict_c: True
+    fun_support:
+      max: 1.0
+      min: -1.0
+    constants:
+      num_constants: 3
+      additive:
+        max: 2
+        min: -2
+      multiplicative:
+        max: 2
+        min: -2
+
+  dataset_val:
+    total_variables: #Do not fill
+    total_coefficients: #Do not fill
+    max_number_of_points: 50
+    type_of_sampling_points: logarithm
+    predict_c: True
+    fun_support:
+      max: 1.0
+      min: -1.0
+    constants:
+      num_constants: 3
+      additive:
+        max: 2
+        min: -2
+      multiplicative:
+        max: 5
+        min: 0.1
+
+  dataset_test:
+    total_variables: #Do not fill
+    total_coefficients: #Do not fill
+    max_number_of_points: 50
+    type_of_sampling_points: logarithm
+    predict_c: True
+    fun_support:
+      max: 1.0
+      min: -1.0
+    constants:
+      num_constants: 3
+      additive:
+        max: 2
+        min: -2
+      multiplicative:
+        max: 5
+        min: 0.1

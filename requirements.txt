@@ -1,0 +1,24 @@
+tqdm>=4.42.1
+h5py
+scipy>=1.4.1
+pytest
+numpy>=1.18.1
+matplotlib>=3.1.3
+ConfigArgParse>=1.2.3
+pytorch_lightning==1.1.2
+PyYAML>=5.3.1
+scikit_learn>=0.23.2
+# torch==1.8.1+cu111
+# torchvision==0.9.1+cu111
+wandb
+sympy
+pandas
+click
+numexpr
+jsons
+dataclass_dict_convert
+hydra-core==1.0.0
+ordered_set
+munch
+numpy_indexed
+

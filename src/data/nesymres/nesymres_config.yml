@@ -1,0 +1,60 @@
+raw_test_path: None
+
+dataset_train:
+  total_variables: #Do not fill
+  total_coefficients: #Do not fill
+  # max_number_of_points: 800  #2000 before
+  # max_number_of_points: 1600  # 1/2
+  # max_number_of_points: 1200  # 1/3
+  # max_number_of_points: 880  # 1/10
+  # max_number_of_points: 60  # 1/10
+  max_number_of_points: 50  # 1/10
+  type_of_sampling_points: logarithm
+  predict_c: True
+  fun_support:
+    max: 1.0
+    min: -1.0
+  constants:
+    num_constants: 3
+    additive:
+      max: 2
+      min: -2
+    multiplicative:
+      max: 2
+      min: -2
+
+dataset_val:
+  total_variables: #Do not fill
+  total_coefficients: #Do not fill
+  max_number_of_points: 50
+  type_of_sampling_points: logarithm
+  predict_c: True
+  fun_support:
+    max: 1.0
+    min: -1.0
+  constants:
+    num_constants: 3
+    additive:
+      max: 2
+      min: -2
+    multiplicative:
+      max: 5
+      min: 0.1
+
+dataset_test:
+  total_variables: #Do not fill
+  total_coefficients: #Do not fill
+  max_number_of_points: 50
+  type_of_sampling_points: logarithm
+  predict_c: True
+  fun_support:
+    max: 1.0
+    min: -1.0
+  constants:
+    num_constants: 3
+    additive:
+      max: 2
+      min: -2
+    multiplicative:
+      max: 5
+      min: 0.1
