@@ -13,6 +13,8 @@ from src.data.TFR_data import TFRDataModule
 from src.data.NeSymReS_data import NeSymReSDataModule
 from src.data.NeSymReS_42_data import NeSymReS42DataModule
 from src.data.PhysioNet_data import PhysioNetDataModule
+from src.data.D30_data import D30DataModule
+
 
 from munch import DefaultMunch
 
@@ -82,6 +84,14 @@ def main(hparams):
             hparams.batch_size,
             hparams.num_workers
         )
+    elif hparams.dataset_type in ["D30"]:
+        data = D30DataModule(
+            hparams.data_root,
+            hparams.train_path,
+            hparams.test_path,
+            hparams.batch_size,
+            hparams.num_workers
+        )
     else:
         raise NotImplementedError
 
@@ -113,6 +123,9 @@ def main(hparams):
         wandb_logger = WandbLogger(project="NIERT-PhysioNet-New")
     elif hparams.dataset_type == "NeSymReS_42":
         wandb_logger = WandbLogger(project="NIERT-PRETRAIN-42")         # Pre-Train for PhysioNet
+    elif hparams.dataset_type == "D30":
+        wandb_logger = WandbLogger(project="NIERT_D30")
+        # wandb_logger = WandbLogger(project="NULL")
     else:
         raise NotImplementedError
 

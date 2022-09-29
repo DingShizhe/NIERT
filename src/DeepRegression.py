@@ -55,6 +55,8 @@ class Model(LightningModule):
             self.criterion = nn.MSELoss()
         elif hparams.dataset_type in ["Current"]:
             self.criterion = nn.MSELoss()
+        elif hparams.dataset_type in ["D30"]:
+            self.criterion = nn.MSELoss()
         else:
             raise NotImplementedError
 
@@ -133,7 +135,7 @@ class Model(LightningModule):
                 ch_range(x[2]), x[3] * self._finetune_mean_factor
             )
 
-        elif self.hparams.dataset_type in ["NeSymReS", "TFR", "Perlin", "Current"]:
+        elif self.hparams.dataset_type in ["NeSymReS", "TFR", "Perlin", "Current", "D30"]:
             # import time
             # t = time.time()
 
@@ -201,6 +203,8 @@ class Model(LightningModule):
         elif self.hparams.dataset_type == "Perlin":
             return optimizer
         elif self.hparams.dataset_type == "Current":
+            return optimizer
+        elif self.hparams.dataset_type == "D30":
             return optimizer
         else:
             raise NotImplementedError
@@ -428,7 +432,7 @@ class Model(LightningModule):
                 "batch_size": heat_label.size(0)
             }
 
-        elif self.hparams.dataset_type in ["NeSymReS", "Perlin", "Current"]:
+        elif self.hparams.dataset_type in ["NeSymReS", "Perlin", "Current", "D30"]:
 
             test_criterion = torch.nn.MSELoss(reduction='none')
 
@@ -496,7 +500,7 @@ class Model(LightningModule):
 
             return test_loss_mean
 
-        elif self.hparams.dataset_type in ["NeSymReS", "Perlin", "Current"]:
+        elif self.hparams.dataset_type in ["NeSymReS", "Perlin", "Current", "D30"]:
 
             points_nums = set([x["given_points"] for x in outputs])
             loss_by_num = {
