@@ -14,7 +14,7 @@ from pytorch_lightning.loggers import WandbLogger
 from src.DeepRegression import Model
 from src.data.TFR_data import TFRDataModule
 from src.data.NeSymReS_data import NeSymReSDataModule, evaluate_and_wrap
-from src.data.Perlin_data import PerlinDataModule
+# from src.data.Perlin_data import PerlinDataModule
 
 from munch import DefaultMunch
 
