@@ -58,6 +58,14 @@ To train NIERT on NeSymReS dataset, run
 CUDA_VISIBLE_DEVICES="0,1" python main.py --config_path ./config/config_NeSymReS.yml
 ```
 
+## Train NIERT on D30 dataset
+
+To train NIERT on D30 dataset, run
+
+```bash
+CUDA_VISIBLE_DEVICES="0" python main.py --config_path ./config/config_D30.yml
+```
+
 
 ## TFRD-ADlet dataset and PhysioNet dataset
 
