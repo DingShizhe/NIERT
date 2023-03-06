@@ -7,21 +7,21 @@ import warnings
 from tqdm import tqdm
 import json
 import os
-from nesymres.dataset import generator
+from Mathit.dataset import generator
 import time
 import signal
-from nesymres import dclasses
+from Mathit import dclasses
 from pathlib import Path
 import pickle
 from sympy import lambdify
-from nesymres.utils import create_env
-from nesymres.utils import code_unpickler, code_pickler
+from Mathit.utils import create_env
+from Mathit.utils import code_unpickler, code_pickler
 import copyreg
 import types
 from itertools import chain
 import traceback
 import sympy as sp
-from nesymres.dataset.sympy_utils import add_multiplicative_constants, add_additive_constants
+from Mathit.dataset.sympy_utils import add_multiplicative_constants, add_additive_constants
 
 
 

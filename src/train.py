@@ -42,7 +42,7 @@ def main(hparams):
             hparams.batch_size,
             hparams.num_workers,
         )
-    elif hparams.dataset_type == "NeSymReS":
+    elif hparams.dataset_type == "Mathit":
         data = NeSymReSDataModule(
             hparams.data_root,
             hparams.train_path,
@@ -117,7 +117,7 @@ def main(hparams):
 
     if hparams.dataset_type in ["TFR", "TFR_FINETUNE"]:
         wandb_logger = WandbLogger(project="TFR")
-    elif hparams.dataset_type == "NeSymReS":
+    elif hparams.dataset_type == "Mathit":
         wandb_logger = WandbLogger(project="NULL")
     elif hparams.dataset_type in ["PhysioNet", "PhysioNet_FINETUNE"]:
         wandb_logger = WandbLogger(project="NIERT-PhysioNet-New")

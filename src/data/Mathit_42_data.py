@@ -10,7 +10,7 @@ import warnings
 import torch
 from torch.utils import data
 import math
-from .nesymres.utils import load_metadata_hdf5, load_eq
+from .mathit.utils import load_metadata_hdf5, load_eq
 from sympy.core.rules import Transform
 from sympy import sympify, Float, Symbol
 from multiprocessing import Manager
@@ -54,12 +54,12 @@ import types
 from typing import List
 import random
 from torch.distributions.uniform import Uniform
-from .nesymres.dataset.data_utils import sample_symbolic_constants
-from .nesymres.dataset.generator import Generator, UnknownSymPyOperator, ValueErrorExpression
+from .mathit.dataset.data_utils import sample_symbolic_constants
+from .mathit.dataset.generator import Generator, UnknownSymPyOperator, ValueErrorExpression
 import torch.nn as nn
 import torch.nn.functional as F
 import pytorch_lightning as pl
-from .nesymres.dataset.dclasses import DatasetDetails, Equation
+from .mathit.dataset.dclasses import DatasetDetails, Equation
 from functools import partial
 from ordered_set import OrderedSet
 from pathlib import Path

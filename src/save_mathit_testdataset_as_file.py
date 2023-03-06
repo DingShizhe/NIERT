@@ -43,7 +43,7 @@ def main(hparams):
             hparams.batch_size,
             hparams.num_workers,
         )
-    elif hparams.dataset_type == "NeSymReS":
+    elif hparams.dataset_type == "Mathit":
         data = NeSymReSDataModule(
             hparams.data_root,
             hparams.train_path,

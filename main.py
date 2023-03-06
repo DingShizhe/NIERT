@@ -84,7 +84,7 @@ def main():
 
     # DSZ define these
     parser.add_argument(
-        "--dataset_type", type=str, default="NeSymReS", help="dataset: NeSymReS or TFR"
+        "--dataset_type", type=str, default="Mathit", help="dataset: Mathit or TFR"
     )
 
     parser.add_argument(

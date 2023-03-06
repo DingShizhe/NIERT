@@ -4,7 +4,7 @@ model_name: NIERT_PhysioNet  # choose from NIERT, TransformerRecon
 # model_name: AttentiveNeuralProcess  # choose from NIERT, TransformerRecon, ConditionalNeuralProcess, AttentiveNeuralProcess
 
 dataset_type: PhysioNet_FINETUNE
-# dataset_type: NeSymReS
+# dataset_type: Mathit
 
 resume_from_checkpoint: path_to_the_pretrained_model
 

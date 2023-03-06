@@ -32,7 +32,7 @@ def main(hparams):
     # 1 INIT LIGHTNING MODEL DATA
     # ------------------------
 
-    assert hparams.dataset_type == "NeSymReS"
+    assert hparams.dataset_type == "Mathit"
 
     model = Model(
         hparams,

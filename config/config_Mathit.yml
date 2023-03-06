@@ -3,7 +3,7 @@ model_name: NIERT
 # model_name: ConditionalNeuralProcess
 # model_name: AttentiveNeuralProcess
 
-dataset_type: NeSymReS
+dataset_type: Mathit
 cfg_dim_input: 3
 cfg_dim_output:
 

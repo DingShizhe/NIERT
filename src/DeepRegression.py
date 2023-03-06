@@ -45,7 +45,7 @@ class Model(LightningModule):
         self.model_arch_cfg = model_arch_cfg
         self._build_model()
 
-        if hparams.dataset_type in ["NeSymReS"]:
+        if hparams.dataset_type in ["Mathit"]:
             self.criterion = nn.MSELoss()
         elif hparams.dataset_type in ["TFR", "TFR_FINETUNE"]:
             self.criterion = nn.L1Loss()
@@ -109,7 +109,7 @@ class Model(LightningModule):
 
     def forward(self, x):
 
-        # Data difference betteen TFR and NeSymReS
+        # Data difference betteen TFR and Mathit
         masks = None
 
         if self.hparams.dataset_type == "PhysioNet_FINETUNE":
@@ -135,7 +135,7 @@ class Model(LightningModule):
                 ch_range(x[2]), x[3] * self._finetune_mean_factor
             )
 
-        elif self.hparams.dataset_type in ["NeSymReS", "TFR", "Perlin", "Current", "D30"]:
+        elif self.hparams.dataset_type in ["Mathit", "TFR", "Perlin", "Current", "D30"]:
             # import time
             # t = time.time()
 
@@ -191,7 +191,7 @@ class Model(LightningModule):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.hparams.lr)
 
         # if self.hparams.lr_decay < 0.0:
-        if self.hparams.dataset_type == "NeSymReS":
+        if self.hparams.dataset_type == "Mathit":
             return optimizer
         elif self.hparams.dataset_type in ["TFR", "TFR_FINETUNE"]:
             scheduler = ExponentialLR(optimizer, gamma=self.hparams.lr_decay)
@@ -432,7 +432,7 @@ class Model(LightningModule):
                 "batch_size": heat_label.size(0)
             }
 
-        elif self.hparams.dataset_type in ["NeSymReS", "Perlin", "Current", "D30"]:
+        elif self.hparams.dataset_type in ["Mathit", "Perlin", "Current", "D30"]:
 
             test_criterion = torch.nn.MSELoss(reduction='none')
 
@@ -500,7 +500,7 @@ class Model(LightningModule):
 
             return test_loss_mean
 
-        elif self.hparams.dataset_type in ["NeSymReS", "Perlin", "Current", "D30"]:
+        elif self.hparams.dataset_type in ["Mathit", "Perlin", "Current", "D30"]:
 
             points_nums = set([x["given_points"] for x in outputs])
             loss_by_num = {

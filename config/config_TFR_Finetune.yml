@@ -6,7 +6,7 @@ resume_from_checkpoint:
 
 dataset_type: TFR_FINETUNE
 # dataset_type: TFR
-# dataset_type: NeSymReS
+# dataset_type: Mathit
 
 # dataset path
 data_root: dataset path of ADlet
