@@ -147,7 +147,7 @@ def creator(number_of_equations,eq_per_block, debug):
     eq_per_block= min(total_number//cpus_available, int(eq_per_block))
     print("There are {} equations per block. The progress bar will have this resolution".format(eq_per_block) )
     warnings.filterwarnings("error")
-    env, param, config_dict = create_env("nesymres_dataset_configuration.json")
+    env, param, config_dict = create_env("mathit_dataset_configuration.json")
 
     if not debug:
         folder_path = Path(f"nesymres_data/data/raw_datasets/{number_of_equations}") 
