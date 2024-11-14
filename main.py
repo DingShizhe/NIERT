@@ -5,7 +5,7 @@ import configargparse
 
 from src.DeepRegression import Model
 # from src import train, test, plot, point
-from src import train, test_nesymres, save_nesymres_testdataset_as_file
+from src import train
 
 
 def main():
